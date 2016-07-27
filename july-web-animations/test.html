@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>웹 애니메이션 101</title>
+  <style>
+    div {
+      width:100px;
+      height:100px;
+      background:red;
+    }
+    .redbox {
+      background: red;
+      animation-name: moveRight;
+      animation-duration: 2s; /* 2초동안 */
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;
+    }
+    .greenbox {
+      background: green;
+      animation-name: moveRight;
+      animation-duration: 2s; /* 2초동안 */
+      animation-fill-mode: forwards;
+      animation-delay: 1s;
+      animation-timing-function: ease;
+    }
+    .bluebox {
+      background: blue;
+      animation-name: moveRight;
+      animation-duration: 2s; /* 2초동안 */
+      animation-fill-mode: forwards;
+      animation-delay: 2s;
+      animation-timing-function: cubic-bezier(0,.96,.99,.24);
+      animation-iteration-count: infinite;
+    }
+    @keyframes moveRight {
+      0% {
+        transform: translate(0, 0);
+        /* 첫번째 인자 : X좌표, 두번쨰 인자 : Y좌표 */
+      }
+      100% {
+        transform: translate(450px, 0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!--
+    - 오늘 할 이야기
+    - 1. 애니메이션의 구조
+    - 2. 애니메이션 사용법
+    - 3. 실제 사용하기
+
+    - 애니메이션
+    - A에서 B로 움직이는 과정을 스무스
+    -->
+    <div class="redbox"></div>
+    <div class="greenbox"></div>
+    <div class="bluebox"></div>
+    <script>
+
+      // 0.5초까지는 350px
+      // 나머지 0.5초동안 150px
+
+      // 제이쿼리 애니메이션
+        // 자바스크립트 애니메이션
+        // 성능보장 X
+        // 스타일을 계속 자바스크립트로 바꿔주는 형태
+
+      // W3C Animation Spec
+      // 애니메이션의 전제 조건
+         // 시간 (몇초동안) - 타이밍 모델
+            // 키프레임 (애니메이션의 전체 시간에서 특정 시점을 지정)
+            // 키프레임의 그룹 (keyframes)
+         // 어떤걸 변화시킬 것인가? (CSS) - 애니메이션 모델
+
+       // 애니메이션의 구현체
+        // CSS 애니메이션
+          // CSS 애니메이션으로 주로 설명
+
+        // JavaScript 애니메이션
+          // 브라우저 구현체
+          // 폴리머 0.5버전 (Polyfill)
+          // https://github.com/web-animations/web-animations-js
+          // Firefox Developer Edition
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

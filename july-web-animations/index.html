@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>웹 애니메이션 101</title>
+  <style>
+    div {
+      width:100px;
+      height:100px;
+      background:red;
+    }
+  </style>
+</head>
+<body>
+  <!--
+    - 오늘 할 이야기
+    - 1. 애니메이션의 구조
+    - 2. 애니메이션 사용법
+    - 3. 실제 사용하기
+    -->
+    <div></div>
+    <script>
+    var div = document.querySelector("div");
+
+    // http://www.html5rocks.com/ko/tutorials/speed/high-performance-animations/
+    var player = div.animate([
+      {transform: "translate3d(0, 0, 0)", offset:0},
+      {transform: "translate3d(100%, 0, 0)", offset:0.7},
+      {transform: "translate3d(200%, 0, 0)", offset:1}
+    ], {
+      duration: 2000,
+      fill: 'forwards',
+      easing: 'cubic-bezier(0,.96,.99,.24)',
+      delay: 1000
+    });
+
+    player.onfinish = function() {
+      player.play();
+    }
+
+    // 애니메이션은 타이밍모델과 애니메이션모델로 구성한다.
+    // 타이밍모델 = 시간, 시점
+    // 애니메이션모델 = 뭘 어떻게 변경시킬 건 지 (CSS)
+
+    // CSS, API (polyfill)
+    // CSS Animation 모바일에서는 그냥 쓰셔도 크게 무관
+    // API는 폴리필과 함께...
+
+    // github
+    </script>
+</body>
+</html>
